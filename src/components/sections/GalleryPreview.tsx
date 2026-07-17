@@ -7,21 +7,24 @@ import { Reveal } from "@/components/animations/Reveal";
 import { LuxuryButton } from "@/components/ui/LuxuryButton";
 import { RemoteImage } from "@/components/ui/RemoteImage";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { useI18n } from "@/lib/i18n";
 import { galleryImages } from "@/lib/site-data";
 import { cn } from "@/lib/utils";
 
 export function GalleryPreview() {
+  const { t } = useI18n();
+
   return (
     <section className="section-band bg-obsidian">
       <div className="section-shell">
         <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <SectionHeader
-            eyebrow="Gallery"
-            title="A dining room made for quiet spectacle."
-            description="Dark stone, polished wood, precise plating and golden evening light."
+            eyebrow={t.gallery.eyebrow}
+            title={t.gallery.title}
+            description={t.gallery.description}
           />
           <LuxuryButton href="/gallery" variant="outline" icon={<ArrowRight size={17} />}>
-            View Gallery
+            {t.gallery.viewGallery}
           </LuxuryButton>
         </div>
 

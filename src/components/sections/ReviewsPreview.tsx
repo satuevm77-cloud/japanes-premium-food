@@ -1,17 +1,22 @@
+"use client";
+
 import { Star } from "lucide-react";
 
 import { Reveal } from "@/components/animations/Reveal";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { useI18n } from "@/lib/i18n";
 import { reviews } from "@/lib/site-data";
 
 export function ReviewsPreview() {
+  const { t } = useI18n();
+
   return (
     <section className="section-band border-y border-premiumWhite/10 bg-[#0D0C0A]">
       <div className="section-shell">
         <SectionHeader
-          eyebrow="Guest Notes"
-          title="Trusted by guests who notice the details."
-          description="Private clients, travelers and business hosts return for service that feels personal, composed and exact."
+          eyebrow={t.reviews.eyebrow}
+          title={t.reviews.title}
+          description={t.reviews.description}
           align="center"
         />
 

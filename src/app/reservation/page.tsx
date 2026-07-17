@@ -1,21 +1,22 @@
+"use client";
+
+import { CalendarDays, Clock, Users } from "lucide-react";
+
 import { Reveal } from "@/components/animations/Reveal";
 import { ReservationForm } from "@/components/sections/ReservationForm";
 import { PageHero } from "@/components/sections/PageHero";
+import { useI18n } from "@/lib/i18n";
 import { contactDetails, imagery } from "@/lib/site-data";
-import { CalendarDays, Clock, Users } from "lucide-react";
-
-export const metadata = {
-  title: "Reservation",
-  description: "Request a reservation at Japanes Premium Food."
-};
 
 export default function ReservationPage() {
+  const { t } = useI18n();
+
   return (
     <>
       <PageHero
-        eyebrow="Reservation"
-        title="Request a private table or chef's counter seat."
-        description="Share your preferred date, guest count and occasion. Our host team will confirm availability."
+        eyebrow={t.reservation.eyebrow}
+        title={t.reservation.title}
+        description={t.reservation.description}
         image={imagery.hero}
       />
 
@@ -25,10 +26,10 @@ export default function ReservationPage() {
             <div className="space-y-10">
               <div>
                 <p className="mb-4 text-sm font-medium uppercase text-gold">
-                  Host Desk
+                  {t.reservation.hostDesk}
                 </p>
                 <h2 className="font-serifjp text-4xl font-light leading-tight text-premiumWhite sm:text-5xl">
-                  Dinner is seated with intention, never rushed.
+                  {t.reservation.subtitle}
                 </h2>
               </div>
 
@@ -41,18 +42,18 @@ export default function ReservationPage() {
               <div className="grid gap-5 sm:grid-cols-3">
                 <div className="rounded-lg border border-premiumWhite/10 bg-premiumWhite/[0.035] p-5">
                   <CalendarDays className="mb-3 text-gold" size={20} />
-                  <p className="text-sm font-medium text-premiumWhite">Flexible Dates</p>
-                  <p className="mt-1 text-xs text-warmGray">Choose any available evening</p>
+                  <p className="text-sm font-medium text-premiumWhite">{t.reservation.flexibleDates}</p>
+                  <p className="mt-1 text-xs text-warmGray">{t.reservation.flexibleDatesDesc}</p>
                 </div>
                 <div className="rounded-lg border border-premiumWhite/10 bg-premiumWhite/[0.035] p-5">
                   <Clock className="mb-3 text-gold" size={20} />
-                  <p className="text-sm font-medium text-premiumWhite">Evening Service</p>
-                  <p className="mt-1 text-xs text-warmGray">17:30 — 23:00</p>
+                  <p className="text-sm font-medium text-premiumWhite">{t.reservation.eveningService}</p>
+                  <p className="mt-1 text-xs text-warmGray">{t.reservation.eveningServiceTime}</p>
                 </div>
                 <div className="rounded-lg border border-premiumWhite/10 bg-premiumWhite/[0.035] p-5">
                   <Users className="mb-3 text-gold" size={20} />
-                  <p className="text-sm font-medium text-premiumWhite">Up to 8 Guests</p>
-                  <p className="mt-1 text-xs text-warmGray">Private rooms available</p>
+                  <p className="text-sm font-medium text-premiumWhite">{t.reservation.upToGuests}</p>
+                  <p className="mt-1 text-xs text-warmGray">{t.reservation.upToGuestsDesc}</p>
                 </div>
               </div>
             </div>

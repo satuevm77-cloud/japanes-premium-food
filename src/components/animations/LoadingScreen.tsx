@@ -3,8 +3,11 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
+import { useI18n } from "@/lib/i18n";
+
 export function LoadingScreen() {
   const [visible, setVisible] = useState(true);
+  const { t } = useI18n();
 
   useEffect(() => {
     const timer = window.setTimeout(() => setVisible(false), 1550);
@@ -27,7 +30,7 @@ export function LoadingScreen() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
             >
-              Japanes
+              {t.loading.brand1}
             </motion.p>
             <motion.p
               className="mt-2 text-sm font-medium uppercase text-gold"
@@ -35,7 +38,7 @@ export function LoadingScreen() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
             >
-              Premium Food
+              {t.loading.brand2}
             </motion.p>
             <div className="mt-8 h-px overflow-hidden bg-premiumWhite/10">
               <motion.div

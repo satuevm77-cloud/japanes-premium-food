@@ -1,9 +1,17 @@
+"use client";
+
 import { Instagram, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
 
-import { contactDetails, navItems } from "@/lib/site-data";
+import { useI18n } from "@/lib/i18n";
+import { contactDetails } from "@/lib/site-data";
+
+const navKeys = ["home", "about", "menu", "gallery", "reviews", "reservation", "contact"] as const;
+const navHrefs = ["/", "/about", "/menu", "/gallery", "/reviews", "/reservation", "/contact"];
 
 export function Footer() {
+  const { t } = useI18n();
+
   return (
     <footer className="relative border-t border-premiumWhite/10 bg-obsidian">
       <div className="seigaiha-layer" />
@@ -16,23 +24,22 @@ export function Footer() {
             Premium Food
           </p>
           <p className="mt-5 max-w-md text-sm leading-7 text-warmGray">
-            Luxury Japanese cuisine shaped by seasonal ingredients, quiet
-            service and a cinematic Tokyo dining atmosphere.
+            {t.footer.description}
           </p>
         </div>
 
         <div>
           <p className="mb-4 text-sm font-medium uppercase text-premiumWhite">
-            Explore
+            {t.footer.explore}
           </p>
           <div className="grid grid-cols-2 gap-3 text-sm text-warmGray">
-            {navItems.map((item) => (
+            {navKeys.map((key, i) => (
               <Link
-                key={item.href}
-                href={item.href}
+                key={navHrefs[i]}
+                href={navHrefs[i]}
                 className="transition hover:text-gold"
               >
-                {item.label}
+                {t.nav[key]}
               </Link>
             ))}
           </div>
@@ -40,7 +47,7 @@ export function Footer() {
 
         <div>
           <p className="mb-4 text-sm font-medium uppercase text-premiumWhite">
-            Visit
+            {t.footer.visit}
           </p>
           <div className="space-y-4 text-sm text-warmGray">
             <p className="flex gap-3">

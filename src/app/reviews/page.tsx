@@ -1,21 +1,21 @@
+"use client";
+
 import { Star } from "lucide-react";
 
 import { Reveal } from "@/components/animations/Reveal";
 import { PageHero } from "@/components/sections/PageHero";
+import { useI18n } from "@/lib/i18n";
 import { reviews, imagery } from "@/lib/site-data";
 
-export const metadata = {
-  title: "Reviews",
-  description: "Guest reviews for Japanes Premium Food."
-};
-
 export default function ReviewsPage() {
+  const { t } = useI18n();
+
   return (
     <>
       <PageHero
-        eyebrow="Reviews"
-        title="Guest notes from travelers, hosts and private clients."
-        description="Testimonials shaped by atmosphere, service and the precision of the menu."
+        eyebrow={t.reviews.eyebrow}
+        title={t.reviews.title}
+        description={t.reviews.description}
         image={imagery.bar}
       />
 

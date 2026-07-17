@@ -1,3 +1,5 @@
+"use client";
+
 import { RemoteImage } from "@/components/ui/RemoteImage";
 import { imagery } from "@/lib/site-data";
 import { cn } from "@/lib/utils";

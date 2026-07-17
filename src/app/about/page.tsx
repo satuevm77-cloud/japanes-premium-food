@@ -1,40 +1,28 @@
+"use client";
+
 import { Reveal } from "@/components/animations/Reveal";
 import { PageHero } from "@/components/sections/PageHero";
 import { RemoteImage } from "@/components/ui/RemoteImage";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { useI18n } from "@/lib/i18n";
 import { imagery } from "@/lib/site-data";
 
-export const metadata = {
-  title: "About Restaurant",
-  description: "The philosophy, chef and traditions behind Japanes Premium Food."
-};
-
-const editorial = [
-  {
-    title: "History",
-    body: "Founded as an intimate counter for guests who value stillness as much as flavor, Japanes Premium Food grew from a private chef's table into a full luxury restaurant."
-  },
-  {
-    title: "Chef",
-    body: "The kitchen is led with omakase discipline: fewer gestures, better ingredients and a deep respect for temperature, timing and texture."
-  },
-  {
-    title: "Ingredients",
-    body: "Seafood, rice, tea and seasonal produce are selected daily, with fermentation and charcoal used to create depth without heaviness."
-  },
-  {
-    title: "Traditions",
-    body: "The room borrows from Japanese tea ceremony, kaiseki pacing and Tokyo nightlife, creating an evening that feels quiet, private and exact."
-  }
-];
-
 export default function AboutPage() {
+  const { t } = useI18n();
+
+  const editorial = [
+    { title: t.about.history, body: t.about.historyBody },
+    { title: t.about.chef, body: t.about.chefBody },
+    { title: t.about.ingredients, body: t.about.ingredientsBody },
+    { title: t.about.traditions, body: t.about.traditionsBody }
+  ];
+
   return (
     <>
       <PageHero
-        eyebrow="About"
-        title="Traditional Japanese craft, interpreted through modern luxury."
-        description="A restaurant built around precision, privacy and the confidence of seasonal cuisine."
+        eyebrow={t.about.eyebrow}
+        title={t.about.title}
+        description={t.about.description}
         image={imagery.sashimi}
       />
 
@@ -42,9 +30,9 @@ export default function AboutPage() {
         <div className="section-shell grid gap-12 lg:grid-cols-[0.95fr_1.05fr]">
           <Reveal>
             <SectionHeader
-              eyebrow="Restaurant Philosophy"
-              title="Luxury is felt in the timing between things."
-              description="We design each dinner as a sequence of calm moments. Service is attentive without noise, the dining room is dramatic without excess, and the menu moves with the seasons."
+              eyebrow={t.about.philosophyTitle}
+              title={t.about.philosophySubtitle}
+              description={t.about.philosophyDesc}
             />
           </Reveal>
 
@@ -77,13 +65,10 @@ export default function AboutPage() {
           </Reveal>
           <Reveal delay={0.12}>
             <p className="font-serifjp text-4xl font-light leading-tight text-premiumWhite sm:text-5xl">
-              The chef&apos;s counter is intentionally small, so every guest remains
-              close to the craft.
+              {t.about.counterTitle}
             </p>
             <p className="mt-6 text-base leading-8 text-warmGray">
-              Knife work, rice temperature, nori texture and sake service happen
-              in view. The performance is never theatrical for its own sake; it
-              is the natural result of serious cuisine.
+              {t.about.counterBody}
             </p>
           </Reveal>
         </div>

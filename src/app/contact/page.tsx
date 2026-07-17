@@ -1,23 +1,23 @@
+"use client";
+
 import { Clock, Instagram, Mail, MapPin, Phone } from "lucide-react";
 import type { ReactNode } from "react";
 
 import { Reveal } from "@/components/animations/Reveal";
 import { PageHero } from "@/components/sections/PageHero";
 import { LuxuryButton } from "@/components/ui/LuxuryButton";
+import { useI18n } from "@/lib/i18n";
 import { contactDetails, imagery } from "@/lib/site-data";
 
-export const metadata = {
-  title: "Contact",
-  description: "Contact details, opening hours and location for Japanes Premium Food."
-};
-
 export default function ContactPage() {
+  const { t } = useI18n();
+
   return (
     <>
       <PageHero
-        eyebrow="Contact"
-        title="Find us in the quiet glow of the central dining district."
-        description="Reservations, private dining and event enquiries are handled by the host desk."
+        eyebrow={t.contact.eyebrow}
+        title={t.contact.title}
+        description={t.contact.description}
         image={imagery.exterior}
       />
 
@@ -25,17 +25,17 @@ export default function ContactPage() {
         <div className="section-shell grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <Reveal>
             <div className="space-y-6">
-              <ContactRow icon={<MapPin size={18} />} title="Address" text={contactDetails.address} />
-              <ContactRow icon={<Phone size={18} />} title="Phone" text={contactDetails.phone} />
-              <ContactRow icon={<Mail size={18} />} title="Email" text={contactDetails.email} />
+              <ContactRow icon={<MapPin size={18} />} title={t.contact.address} text={contactDetails.address} />
+              <ContactRow icon={<Phone size={18} />} title={t.contact.phone} text={contactDetails.phone} />
+              <ContactRow icon={<Mail size={18} />} title={t.contact.email} text={contactDetails.email} />
               <ContactRow
                 icon={<Instagram size={18} />}
-                title="Social"
+                title={t.contact.social}
                 text={contactDetails.socials.join(" / ")}
               />
               <div className="pt-4">
                 <LuxuryButton href="/reservation" icon={<Clock size={17} />}>
-                  Reserve Table
+                  {t.contact.reserve}
                 </LuxuryButton>
               </div>
             </div>
@@ -52,7 +52,7 @@ export default function ContactPage() {
                   Ginza Lane
                 </p>
                 <p className="mt-2 text-sm text-warmGray">
-                  Map preview placeholder for a premium embedded location.
+                  {t.contact.mapPlaceholder}
                 </p>
               </div>
             </div>

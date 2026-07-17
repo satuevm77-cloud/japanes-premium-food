@@ -6,6 +6,7 @@ import dynamic from "next/dynamic";
 
 import { LuxuryButton } from "@/components/ui/LuxuryButton";
 import { RemoteImage } from "@/components/ui/RemoteImage";
+import { useI18n } from "@/lib/i18n";
 import { imagery } from "@/lib/site-data";
 
 const LuxuryScene = dynamic(
@@ -14,6 +15,8 @@ const LuxuryScene = dynamic(
 );
 
 export function HeroSection() {
+  const { t } = useI18n();
+
   return (
     <section className="relative flex min-h-[94svh] items-center overflow-hidden border-b border-premiumWhite/10 bg-obsidian pt-20">
       <RemoteImage
@@ -36,22 +39,22 @@ export function HeroSection() {
           className="max-w-4xl"
         >
           <p className="mb-5 text-sm font-medium uppercase text-gold">
-            Luxury Japanese Cuisine
+            {t.hero.eyebrow}
           </p>
           <h1 className="font-serifjp text-6xl font-light uppercase leading-none text-premiumWhite sm:text-7xl md:text-8xl lg:text-9xl">
-            Japanes
-            <span className="block text-gold">Premium Food</span>
+            {t.hero.title1}
+            <span className="block text-gold">{t.hero.title2}</span>
           </h1>
           <p className="mt-7 max-w-2xl text-lg leading-8 text-premiumWhite/80 sm:text-xl">
-            Authentic Japanese cuisine crafted with tradition and perfection.
+            {t.hero.description}
           </p>
 
           <div className="mt-9 flex flex-col gap-4 sm:flex-row">
             <LuxuryButton href="/reservation" icon={<CalendarDays size={17} />}>
-              Reserve Table
+              {t.hero.reserve}
             </LuxuryButton>
             <LuxuryButton href="/menu" variant="outline" icon={<ArrowRight size={17} />}>
-              Explore Menu
+              {t.hero.explore}
             </LuxuryButton>
           </div>
         </motion.div>
@@ -63,16 +66,16 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 0.85 }}
         >
           <p>
-            <span className="block text-premiumWhite">Omakase Counter</span>
-            12 private seats nightly
+            <span className="block text-premiumWhite">{t.hero.omakase}</span>
+            {t.hero.omakaseDesc}
           </p>
           <p>
-            <span className="block text-premiumWhite">Seasonal Menu</span>
-            Ingredients selected daily
+            <span className="block text-premiumWhite">{t.hero.seasonal}</span>
+            {t.hero.seasonalDesc}
           </p>
           <p>
-            <span className="block text-premiumWhite">Private Dining</span>
-            Business and celebration rooms
+            <span className="block text-premiumWhite">{t.hero.private}</span>
+            {t.hero.privateDesc}
           </p>
         </motion.div>
       </div>

@@ -1,12 +1,17 @@
+"use client";
+
 import { ArrowRight } from "lucide-react";
 
 import { Reveal } from "@/components/animations/Reveal";
 import { LuxuryButton } from "@/components/ui/LuxuryButton";
 import { RemoteImage } from "@/components/ui/RemoteImage";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { useI18n } from "@/lib/i18n";
 import { imagery } from "@/lib/site-data";
 
 export function PhilosophySection() {
+  const { t } = useI18n();
+
   return (
     <section className="section-band bg-obsidian">
       <div className="seigaiha-layer" />
@@ -25,16 +30,16 @@ export function PhilosophySection() {
 
         <Reveal delay={0.1}>
           <SectionHeader
-            eyebrow="Philosophy"
-            title="A Tokyo dining ritual shaped by restraint, texture and exact timing."
-            description="Japanes Premium Food blends modern luxury with traditional Japanese sensibility. Every service is built around seasonal ingredients, calm hospitality and the confidence of craft."
+            eyebrow={t.philosophy.eyebrow}
+            title={t.philosophy.title}
+            description={t.philosophy.description}
           />
 
           <div className="mt-9 grid gap-6 sm:grid-cols-3">
             {[
-              ["01", "Seasonal sourcing"],
-              ["02", "Chef-led omakase"],
-              ["03", "Private hospitality"]
+              ["01", t.philosophy.step1],
+              ["02", t.philosophy.step2],
+              ["03", t.philosophy.step3]
             ].map(([number, label]) => (
               <div key={number} className="border-t border-gold/40 pt-5">
                 <p className="font-serifjp text-3xl text-gold">{number}</p>
@@ -45,7 +50,7 @@ export function PhilosophySection() {
 
           <div className="mt-10">
             <LuxuryButton href="/about" variant="outline" icon={<ArrowRight size={17} />}>
-              Discover Story
+              {t.philosophy.discover}
             </LuxuryButton>
           </div>
         </Reveal>

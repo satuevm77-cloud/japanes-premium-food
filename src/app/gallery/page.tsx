@@ -1,19 +1,19 @@
+"use client";
+
 import { GalleryGrid } from "@/components/sections/GalleryGrid";
 import { PageHero } from "@/components/sections/PageHero";
+import { useI18n } from "@/lib/i18n";
 import { imagery } from "@/lib/site-data";
 
-export const metadata = {
-  title: "Gallery",
-  description: "A cinematic gallery of Japanes Premium Food."
-};
-
 export default function GalleryPage() {
+  const { t } = useI18n();
+
   return (
     <>
       <PageHero
-        eyebrow="Gallery"
-        title="Cinematic details from counter, cellar and table."
-        description="A visual record of the restaurant's ingredients, craft and late-night atmosphere."
+        eyebrow={t.gallery.eyebrow}
+        title={t.gallery.title}
+        description={t.gallery.description}
         image={imagery.hero}
       />
 

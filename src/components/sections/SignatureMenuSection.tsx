@@ -7,9 +7,11 @@ import { Reveal } from "@/components/animations/Reveal";
 import { LuxuryButton } from "@/components/ui/LuxuryButton";
 import { RemoteImage } from "@/components/ui/RemoteImage";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { useI18n } from "@/lib/i18n";
 import { menuCategories } from "@/lib/site-data";
 
 export function SignatureMenuSection() {
+  const { t } = useI18n();
   const items = menuCategories.flatMap((category) => category.items).slice(0, 3);
 
   return (
@@ -17,12 +19,12 @@ export function SignatureMenuSection() {
       <div className="section-shell">
         <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <SectionHeader
-            eyebrow="Menu"
-            title="Seasonal signatures for a refined evening."
-            description="A concise selection from the tasting menu, composed around ocean, fire and delicate fermentation."
+            eyebrow={t.menu.eyebrow}
+            title={t.menu.title}
+            description={t.menu.description}
           />
           <LuxuryButton href="/menu" variant="ghost" icon={<ArrowRight size={17} />}>
-            Full Menu
+            {t.menu.fullMenu}
           </LuxuryButton>
         </div>
 

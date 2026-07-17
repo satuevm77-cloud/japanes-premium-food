@@ -6,6 +6,7 @@ import { LoadingScreen } from "@/components/animations/LoadingScreen";
 import { SmoothScrollProvider } from "@/components/animations/SmoothScrollProvider";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
+import { I18nWrapper } from "@/components/layout/I18nWrapper";
 import { imagery } from "@/lib/site-data";
 
 import "./globals.css";
@@ -102,16 +103,18 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
-        <SmoothScrollProvider />
-        <LoadingScreen />
-        <CursorGlow />
-        <Header />
-        <main className="relative z-10">{children}</main>
-        <Footer />
+        <I18nWrapper>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+          />
+          <SmoothScrollProvider />
+          <LoadingScreen />
+          <CursorGlow />
+          <Header />
+          <main className="relative z-10">{children}</main>
+          <Footer />
+        </I18nWrapper>
       </body>
     </html>
   );

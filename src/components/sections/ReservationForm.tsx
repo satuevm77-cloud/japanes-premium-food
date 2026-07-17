@@ -6,6 +6,7 @@ import { FormEvent, useState } from "react";
 
 import { CalendarPicker } from "@/components/ui/CalendarPicker";
 import { LuxuryButton } from "@/components/ui/LuxuryButton";
+import { useI18n } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
 const fieldClass =
@@ -19,6 +20,7 @@ export function ReservationForm() {
   const [submitted, setSubmitted] = useState(false);
   const [selectedDate, setSelectedDate] = useState("");
   const [selectedTime, setSelectedTime] = useState("");
+  const { t } = useI18n();
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -36,17 +38,17 @@ export function ReservationForm() {
       >
         <div className="grid gap-5 sm:grid-cols-2">
           <label className="space-y-2 text-sm text-warmGray">
-            <span>Name</span>
-            <input name="name" required placeholder="Your name" className={fieldClass} />
+            <span>{t.reservation.name}</span>
+            <input name="name" required placeholder={t.reservation.namePlaceholder} className={fieldClass} />
           </label>
           <label className="space-y-2 text-sm text-warmGray">
-            <span>Phone</span>
-            <input name="phone" required placeholder="+1 000 000 0000" className={fieldClass} />
+            <span>{t.reservation.phone}</span>
+            <input name="phone" required placeholder={t.reservation.phonePlaceholder} className={fieldClass} />
           </label>
         </div>
 
         <div className="mt-5">
-          <p className="mb-2 text-sm text-warmGray">Select date</p>
+          <p className="mb-2 text-sm text-warmGray">{t.reservation.selectDate}</p>
           <input type="hidden" name="date" required value={selectedDate} />
           <CalendarPicker value={selectedDate} onChange={setSelectedDate} />
         </div>
@@ -54,7 +56,7 @@ export function ReservationForm() {
         <div className="mt-5">
           <p className="mb-2 flex items-center gap-2 text-sm text-warmGray">
             <Clock size={14} />
-            Select time
+            {t.reservation.selectTime}
           </p>
           <input type="hidden" name="time" required value={selectedTime} />
           <div className="grid grid-cols-4 gap-2">
@@ -78,46 +80,40 @@ export function ReservationForm() {
 
         <div className="mt-5 grid gap-5 sm:grid-cols-2">
           <label className="space-y-2 text-sm text-warmGray">
-            <span>Number of guests</span>
+            <span>{t.reservation.guests}</span>
             <select name="guests" required className={fieldClass} defaultValue="">
-              <option value="" disabled>
-                Select guests
-              </option>
+              <option value="" disabled>{t.reservation.selectGuests}</option>
               {[1, 2, 3, 4, 5, 6, 7, 8].map((guests) => (
-                <option key={guests} value={guests}>
-                  {guests}
-                </option>
+                <option key={guests} value={guests}>{guests}</option>
               ))}
             </select>
           </label>
           <label className="space-y-2 text-sm text-warmGray">
-            <span>Occasion</span>
+            <span>{t.reservation.occasion}</span>
             <select name="occasion" className={fieldClass} defaultValue="">
-              <option value="" disabled>
-                Select occasion
-              </option>
-              <option value="dinner">Dinner</option>
-              <option value="birthday">Birthday</option>
-              <option value="anniversary">Anniversary</option>
-              <option value="business">Business</option>
-              <option value="date">Date Night</option>
-              <option value="celebration">Celebration</option>
+              <option value="" disabled>{t.reservation.selectOccasion}</option>
+              <option value="dinner">{t.reservation.occasionDinner}</option>
+              <option value="birthday">{t.reservation.occasionBirthday}</option>
+              <option value="anniversary">{t.reservation.occasionAnniversary}</option>
+              <option value="business">{t.reservation.occasionBusiness}</option>
+              <option value="date">{t.reservation.occasionDate}</option>
+              <option value="celebration">{t.reservation.occasionCelebration}</option>
             </select>
           </label>
         </div>
 
         <label className="mt-5 block space-y-2 text-sm text-warmGray">
-          <span>Special requests</span>
+          <span>{t.reservation.specialRequests}</span>
           <textarea
             name="message"
-            placeholder="Dietary notes, seating preference or any other requests"
+            placeholder={t.reservation.specialRequestsPlaceholder}
             className={`${fieldClass} min-h-28 resize-y`}
           />
         </label>
 
         <div className="mt-7">
           <LuxuryButton type="submit" icon={<CalendarCheck size={17} />}>
-            Send Request
+            {t.reservation.sendRequest}
           </LuxuryButton>
         </div>
       </form>
@@ -146,11 +142,10 @@ export function ReservationForm() {
               </button>
               <CalendarCheck className="mx-auto text-gold" size={36} />
               <h2 className="mt-5 font-serifjp text-3xl font-light text-premiumWhite">
-                Your reservation request has been received.
+                {t.reservation.confirmation}
               </h2>
               <p className="mt-4 text-sm leading-7 text-warmGray">
-                Our host team will contact you shortly to confirm availability
-                and refine the details of your evening.
+                {t.reservation.confirmationDesc}
               </p>
             </motion.div>
           </motion.div>

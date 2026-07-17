@@ -1,20 +1,20 @@
+"use client";
+
 import { Reveal } from "@/components/animations/Reveal";
 import { PageHero } from "@/components/sections/PageHero";
 import { RemoteImage } from "@/components/ui/RemoteImage";
+import { useI18n } from "@/lib/i18n";
 import { menuCategories, imagery } from "@/lib/site-data";
 
-export const metadata = {
-  title: "Menu",
-  description: "Explore the sushi, main course and drinks menu at Japanes Premium Food."
-};
-
 export default function MenuPage() {
+  const { t } = useI18n();
+
   return (
     <>
       <PageHero
-        eyebrow="Menu"
-        title="Sushi, charcoal and sake composed for a refined evening."
-        description="Premium Japanese cuisine served through sushi, main courses and rare drinks."
+        eyebrow={t.menu.eyebrow}
+        title={t.menu.title}
+        description={t.menu.description}
         image={imagery.sushi}
       />
 
