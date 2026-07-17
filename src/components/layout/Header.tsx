@@ -1,11 +1,10 @@
 "use client";
 
-import { CalendarDays, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
-import { LuxuryButton } from "@/components/ui/LuxuryButton";
 import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
 import { useI18n } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
@@ -50,9 +49,6 @@ export function Header() {
 
         <div className="hidden items-center gap-3 lg:flex">
           <LanguageSwitcher />
-          <LuxuryButton href="/reservation" icon={<CalendarDays size={16} />}>
-            {t.nav.reservation}
-          </LuxuryButton>
         </div>
 
         <div className="flex items-center gap-2 lg:hidden">
