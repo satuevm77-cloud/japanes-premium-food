@@ -18,7 +18,7 @@ export function Footer() {
       <div className="section-shell relative z-10 grid gap-12 py-14 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
           <p className="font-serifjp text-3xl font-light uppercase text-premiumWhite">
-            Japanes
+            Japanese
           </p>
           <p className="mt-1 text-sm font-medium uppercase text-gold">
             Premium Food
@@ -66,7 +66,7 @@ export function Footer() {
         </div>
       </div>
       <div className="section-shell border-t border-premiumWhite/10 py-5 text-xs text-warmGray">
-        <p>2026 Japanes Premium Food. Crafted for private dining and fine cuisine.</p>
+        <p>2026 Japanese Premium Food. Crafted for private dining and fine cuisine.</p>
       </div>
     </footer>
   );

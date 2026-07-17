@@ -1,4 +1,4 @@
-# Japanes Premium Food
+# Japanese Premium Food
 
 Premium Japanese restaurant website built as a portfolio piece. Next.js 15 with cinematic dark UI, Three.js 3D scene, and Framer Motion animations.
 

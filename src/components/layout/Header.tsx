@@ -22,7 +22,7 @@ export function Header() {
       <div className="section-shell flex h-20 items-center justify-between">
         <Link href="/" className="group inline-flex flex-col">
           <span className="font-serifjp text-xl font-light uppercase text-premiumWhite">
-            Japanes
+            Japanese
           </span>
           <span className="text-xs font-medium uppercase text-gold">
             Premium Food

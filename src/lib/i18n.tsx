@@ -17,7 +17,7 @@ const translations = {
     },
     hero: {
       eyebrow: "Luxury Japanese Cuisine",
-      title1: "Japanes",
+      title1: "Japanese",
       title2: "Premium Food",
       description: "Authentic Japanese cuisine crafted with tradition and perfection.",
       reserve: "Reserve Table",
@@ -32,7 +32,7 @@ const translations = {
     philosophy: {
       eyebrow: "Philosophy",
       title: "A Tokyo dining ritual shaped by restraint, texture and exact timing.",
-      description: "Japanes Premium Food blends modern luxury with traditional Japanese sensibility. Every service is built around seasonal ingredients, calm hospitality and the confidence of craft.",
+      description: "Japanese Premium Food blends modern luxury with traditional Japanese sensibility. Every service is built around seasonal ingredients, calm hospitality and the confidence of craft.",
       step1: "Seasonal sourcing",
       step2: "Chef-led omakase",
       step3: "Private hospitality",
@@ -108,7 +108,7 @@ const translations = {
       philosophySubtitle: "Luxury is felt in the timing between things.",
       philosophyDesc: "We design each dinner as a sequence of calm moments. Service is attentive without noise, the dining room is dramatic without excess, and the menu moves with the seasons.",
       history: "History",
-      historyBody: "Founded as a quiet counter for guests who value stillness as much as flavor, Japanes Premium Food grew from a private chef's table into a full luxury restaurant.",
+      historyBody: "Founded as a quiet counter for guests who value stillness as much as flavor, Japanese Premium Food grew from a private chef's table into a full luxury restaurant.",
       chef: "Chef",
       chefBody: "The kitchen is led with omakase discipline: fewer gestures, better ingredients and a deep respect for temperature, timing and texture.",
       ingredients: "Ingredients",
@@ -131,7 +131,7 @@ const translations = {
       visit: "Visit"
     },
     loading: {
-      brand1: "Japanes",
+      brand1: "Japanese",
       brand2: "Premium Food"
     }
   },
@@ -147,7 +147,7 @@ const translations = {
     },
     hero: {
       eyebrow: "高級日本料理",
-      title1: "Japanes",
+      title1: "Japanese",
       title2: "Premium Food",
       description: "伝統と完璧さで作られた本格的な日本料理。",
       reserve: "予約する",
@@ -162,7 +162,7 @@ const translations = {
     philosophy: {
       eyebrow: "哲学",
       title: "抑制、質感、正確なタイミングで形作られた東京のダイニングリチュアル。",
-      description: "Japanes Premium Foodは、モダンなラグジュアリーと伝統的な日本の感性を融合させています。すべてのサービスは、季節の食材、静かなホスピタリティ、そして職人の自信の上に構築されています。",
+      description: "Japanese Premium Foodは、モダンなラグジュアリーと伝統的な日本の感性を融合させています。すべてのサービスは、季節の食材、静かなホスピタリティ、そして職人の自信の上に構築されています。",
       step1: "季節の仕入れ",
       step2: "シェフ主導のおまかせ",
       step3: "プライベートホスピタリティ",
@@ -238,7 +238,7 @@ const translations = {
       philosophySubtitle: "ラグジュアリーは、ものともの之间的のタイミングで感じられます。",
       philosophyDesc: "私たちは、各ディナーを静かな瞬間のシーケンスとして設計しています。サービスは騒がず、ダイニングルームは過剰さなくドラマチックで、メニューは季節とともに動きます。",
       history: "歴史",
-      historyBody: "味と同じくらい静けさを大切にするゲストのための静かなカウンターとして設立されたJapanes Premium Foodは、プライベートシェフのテーブルからフルラグジュアリーレストランに成長しました。",
+      historyBody: "味と同じくらい静けさを大切にするゲストのための静かなカウンターとして設立されたJapanese Premium Foodは、プライベートシェフのテーブルからフルラグジュアリーレストランに成長しました。",
       chef: "シェフ",
       chefBody: "キッチンはおまかせの規律で導かれます。より少ないジェスチャー、より良い食材、そして温度、タイミング、テクスチャへの深い敬意。",
       ingredients: "食材",
@@ -261,7 +261,7 @@ const translations = {
       visit: "アクセス"
     },
     loading: {
-      brand1: "Japanes",
+      brand1: "Japanese",
       brand2: "Premium Food"
     }
   },
@@ -277,7 +277,7 @@ const translations = {
     },
     hero: {
       eyebrow: "Премиальная Японская Кухня",
-      title1: "Japanes",
+      title1: "Japanese",
       title2: "Premium Food",
       description: "Аутентичная японская кухня, созданная с традициями и совершенством.",
       reserve: "Забронировать",
@@ -292,7 +292,7 @@ const translations = {
     philosophy: {
       eyebrow: "Философия",
       title: "Токийский ритуал ужина, сформированный сдержанностью, текстурой и точным таймингом.",
-      description: "Japanes Premium Food сочетает современную роскошь с традиционным японским восприятием. Каждый сервис строится на сезонных ингредиентах, спокойном гостеприимстве и уверенности мастерства.",
+      description: "Japanese Premium Food сочетает современную роскошь с традиционным японским восприятием. Каждый сервис строится на сезонных ингредиентах, спокойном гостеприимстве и уверенности мастерства.",
       step1: "Сезонные закупки",
       step2: "Омакасе от шеф-повара",
       step3: "Приватное гостеприимство",
@@ -368,7 +368,7 @@ const translations = {
       philosophySubtitle: "Роскошь ощущается в тайминге между вещами.",
       philosophyDesc: "Мы проектируем каждый ужин как последовательность спокойных моментов. Сервис внимателен без шума, зал драматичен без избыточности, а меню движется вместе с сезонами.",
       history: "История",
-      historyBody: "Основанный как уютная стойка для гостей, ценящих тишину не меньше вкуса, Japanes Premium Food вырос от приватного стола шеф-повара до полноценного ресторана премиум-класса.",
+      historyBody: "Основанный как уютная стойка для гостей, ценящих тишину не меньше вкуса, Japanese Premium Food вырос от приватного стола шеф-повара до полноценного ресторана премиум-класса.",
       chef: "Шеф-повар",
       chefBody: "Кухня управляется дисциплиной омакасе: меньше жестов, лучшие ингредиенты и глубокое уважение к температуре, таймингу и текстуре.",
       ingredients: "Ингредиенты",
@@ -391,7 +391,7 @@ const translations = {
       visit: "Как добраться"
     },
     loading: {
-      brand1: "Japanes",
+      brand1: "Japanese",
       brand2: "Premium Food"
     }
   }

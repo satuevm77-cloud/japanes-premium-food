@@ -14,8 +14,8 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://japanes-premium-food.example.com"),
   title: {
-    default: "Japanes Premium Food | Luxury Japanese Restaurant",
-    template: "%s | Japanes Premium Food"
+    default: "Japanese Premium Food | Luxury Japanese Restaurant",
+    template: "%s | Japanese Premium Food"
   },
   description: "Experience authentic Japanese cuisine in a premium atmosphere.",
   keywords: [
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
     "Japanese fine dining",
     "private dining"
   ],
-  authors: [{ name: "Japanes Premium Food" }],
-  creator: "Japanes Premium Food",
-  publisher: "Japanes Premium Food",
+  authors: [{ name: "Japanese Premium Food" }],
+  creator: "Japanese Premium Food",
+  publisher: "Japanese Premium Food",
   category: "restaurant",
   alternates: {
     canonical: "/"
@@ -37,24 +37,24 @@ export const metadata: Metadata = {
   },
   manifest: "/site.webmanifest",
   openGraph: {
-    title: "Japanes Premium Food | Luxury Japanese Restaurant",
+    title: "Japanese Premium Food | Luxury Japanese Restaurant",
     description: "Experience authentic Japanese cuisine in a premium atmosphere.",
     type: "website",
     url: "/",
     locale: "en_US",
-    siteName: "Japanes Premium Food",
+    siteName: "Japanese Premium Food",
     images: [
       {
         url: imagery.hero,
         width: 2200,
         height: 1400,
-        alt: "Japanes Premium Food sushi counter"
+        alt: "Japanese Premium Food sushi counter"
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Japanes Premium Food | Luxury Japanese Restaurant",
+    title: "Japanese Premium Food | Luxury Japanese Restaurant",
     description: "Experience authentic Japanese cuisine in a premium atmosphere.",
     images: [imagery.hero]
   }
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "Restaurant",
-  name: "Japanes Premium Food",
+  name: "Japanese Premium Food",
   servesCuisine: "Japanese",
   priceRange: "$$$$",
   image: imagery.hero,
