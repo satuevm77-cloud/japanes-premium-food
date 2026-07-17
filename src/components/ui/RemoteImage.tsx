@@ -1,28 +1,46 @@
-import type { ImgHTMLAttributes } from "react";
+import Image from "next/image";
 
 import { cn } from "@/lib/utils";
 
-type RemoteImageProps = Omit<ImgHTMLAttributes<HTMLImageElement>, "alt"> & {
+type RemoteImageProps = {
+  src: string;
   alt: string;
   fill?: boolean;
   priority?: boolean;
+  className?: string;
+  sizes?: string;
 };
 
 export function RemoteImage({
+  src,
+  alt,
   fill = false,
   priority = false,
-  loading,
   className,
-  alt,
-  ...props
+  sizes
 }: RemoteImageProps) {
+  if (fill) {
+    return (
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        priority={priority}
+        sizes={sizes ?? "(max-width: 768px) 100vw, 50vw"}
+        className={cn("object-cover", className)}
+      />
+    );
+  }
+
   return (
-    <img
-      {...props}
+    <Image
+      src={src}
       alt={alt}
-      loading={priority ? "eager" : loading ?? "lazy"}
-      decoding="async"
-      className={cn(fill && "absolute inset-0 h-full w-full", className)}
+      width={800}
+      height={600}
+      priority={priority}
+      sizes={sizes ?? "(max-width: 768px) 100vw, 50vw"}
+      className={cn("h-auto w-full", className)}
     />
   );
 }
