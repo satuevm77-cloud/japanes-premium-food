@@ -1,0 +1,16 @@
+{
+  "name": "Japanes Premium Food",
+  "short_name": "Japanes",
+  "description": "Luxury Japanese cuisine in a premium atmosphere.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#080808",
+  "theme_color": "#080808",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "64x64",
+      "type": "image/svg+xml"
+    }
+  ]
+}
