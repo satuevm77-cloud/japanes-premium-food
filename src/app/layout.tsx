@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
+import { Analytics } from "@vercel/analytics/next";
+
 import { CursorGlow } from "@/components/animations/CursorGlow";
 import { LoadingScreen } from "@/components/animations/LoadingScreen";
 import { SmoothScrollProvider } from "@/components/animations/SmoothScrollProvider";
@@ -112,6 +114,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Header />
         <main className="relative z-10">{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
