@@ -17,15 +17,15 @@ export function LanguageSwitcher() {
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        className="inline-flex h-9 items-center gap-1.5 rounded-sm border border-premiumWhite/10 px-2.5 text-xs font-medium text-warmGray transition hover:border-gold hover:text-gold"
+        className="inline-flex h-10 items-center gap-2 rounded-sm border border-premiumWhite/15 px-3 text-sm font-medium text-warmGray transition hover:border-gold hover:text-gold"
         aria-label="Change language"
       >
-        <Globe size={14} />
+        <Globe size={16} />
         <span>{localeLabels[locale]}</span>
       </button>
 
       {open ? (
-        <div className="absolute right-0 top-full z-50 mt-1 min-w-[100px] rounded-sm border border-premiumWhite/10 bg-[#0D0C0A] py-1 shadow-emerald">
+        <div className="absolute right-0 top-full z-50 mt-2 min-w-[120px] rounded-sm border border-premiumWhite/15 bg-[#0D0C0A] py-1 shadow-emerald backdrop-blur-xl">
           {locales.map((l) => (
             <button
               key={l}
